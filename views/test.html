@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://justinbourb.github.io/jstinytest_dom_edition/tinytest_dom_edition.js"></script>
+    <script src="/decimalToBinary.js"></script>
+    <script src="/binaryToDecimal.js"></script>
+  </head>
+  <script>
+  tests({
+    //DecimalToBinary.js tests
+    'It should convert decimal to binary': function() {
+      let input = 255;
+      let inputTwo = 10;
+      let results = decimalToBinary(input);
+      eq(results, '11111111');
+           
+      results = decimalToBinary(inputTwo);
+      eq(results, '00001010');
+    },
+    
+    'It should prepend leading zeros up to 8 digits': function() {
+      let input = 255;
+      let inputTwo = 10;
+      let results = decimalToBinary(input);
+      eq(results.length, 8);
+           
+      results = decimalToBinary(inputTwo);
+      eq(results.length, 8);
+      eq(results, '00001010');
+    },
+    
+    //binaryToDecimal.js tests
+    'It should convert a binary number to decimal': function() {
+      let binary = "00001010";
+      let results = binaryToDecimal(binary);
+      eq(results, 10);
+    },
+    
+    
+    
+  })
+  
+  </script>
+</html>
