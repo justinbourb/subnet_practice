@@ -2,7 +2,7 @@ function decimalToBinary(input) {
   let leadingZero = '';
   let binaryLength;
   let results;
-  let binary = input.toString(2);
+  let binary = parseInt(input).toString(2);
   binaryLength = binary.length;
   
   if (binaryLength < 8) {
