@@ -8,7 +8,7 @@
   <script>
   tests({
     //DecimalToBinary.js tests
-    'It should convert decimal to binary': function() {
+    'DecimalToBinary should convert decimal to binary': function() {
       let input = 255;
       let inputTwo = 10;
       let results = decimalToBinary(input);
@@ -18,7 +18,7 @@
       eq(results, '00001010');
     },
     
-    'It should prepend leading zeros up to 8 digits': function() {
+    'DecimalToBinary should prepend leading zeros up to 8 digits': function() {
       let input = 255;
       let inputTwo = 10;
       let results = decimalToBinary(input);
@@ -29,13 +29,35 @@
       eq(results, '00001010');
     },
     
+    'DecimalToBinary should accept strings': function() {
+      let input = '255';
+      let inputTwo = '10';
+      let results = decimalToBinary(input);
+      eq(results, '11111111');
+           
+      results = decimalToBinary(inputTwo);
+      eq(results, '00001010');
+    },
+    
+    'DecimalToBinary should handle large numbers': function() {
+      let input = '5000';
+      let results = decimalToBinary(input);
+      eq(results, '1001110001000');
+    },
+    
+    
     //binaryToDecimal.js tests
-    'It should convert a binary number to decimal': function() {
+    'binaryToDecimal should convert a binary number to decimal': function() {
       let binary = "00001010";
       let results = binaryToDecimal(binary);
       eq(results, 10);
     },
     
+    'binaryToDecimal should handle large numbers': function() {
+      let binary = "1001110001000";
+      let results = binaryToDecimal(binary);
+      eq(results, 5000);
+    },
     
     
   })
