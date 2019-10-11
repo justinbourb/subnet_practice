@@ -45,6 +45,10 @@
       eq(results, '1001110001000');
     },
     
+    'DecimalToBinary should reject incorrect formats': function() {
+      fail('empty test');      
+    },
+    
     
     //binaryToDecimal.js tests
     'binaryToDecimal should convert a binary number to decimal': function() {
@@ -59,7 +63,15 @@
       eq(results, 5000);
     },
     
+    'binaryToDecimal should accept integers': function() {
+      let binary = 1001110001000;
+      let results = binaryToDecimal(binary);
+      eq(results, 5000);
+    },
     
+    'binaryToDecimal should reject incorrect formats': function() {
+      fail('empty test');
+    },
   })
   
   </script>
